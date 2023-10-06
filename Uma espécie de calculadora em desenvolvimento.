@@ -1,0 +1,141 @@
+public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(" Olá. Esta é uma máquina de cálculo em desenvolvimento. Portanto, falhas poderão ocorrer.");
+		System.out.println();
+		System.out.println(" Escolha uma das funções abaixo que desejar.");
+		System.out.println();
+		System.out.println(" 1 - Calculadora simples.");
+		System.out.println(" 2 - Calculadora para função do 2º grau.");
+		System.out.println(" 3 - Potenciação.");
+		System.out.println(" 4 - Radiciação quadrada.");
+		System.out.println(" 5 - Multiplos ou não multiplos.");
+		System.out.println(" 6 - Par ou Ímpar.");
+		
+		int opcao = sc.nextInt();
+		switch (opcao) {
+		case 1:
+			System.out.println(" Bom, você escolheu a opção Calculadora Simples.");
+			System.out.println(" Por enquanto só consigo calcular com as 4 operações da matemática.");
+			int x, y, operacao, resultado;
+			System.out.println(" Tudo bem. Escolha um número.");
+			x = sc.nextInt();
+			System.out.println(" Por favor, escolha uma operação:");
+			System.out.println(" 1- Adição.");
+			System.out.println(" 2- Subtração.");
+			System.out.println(" 3- Multiplicação.");
+			System.out.println(" 4- Divisão.");
+			operacao = sc.nextInt();
+			System.out.println(" Escolha outro número.");
+			y = sc.nextInt();
+			
+			switch (operacao) {
+			       case 1:
+				       resultado = x + y;
+				       System.out.println(" O resultado é: "+resultado);
+				       System.out.println(" Obrigado.");
+				       break;
+			       case 2:
+				       resultado = x - y;
+				       System.out.println(" O resultado é: "+resultado);
+				       System.out.println(" Obrigado.");
+				       break;
+			       case 3:
+				       resultado = x * y;
+				       System.out.println(" O resultado é: "+resultado);
+				       System.out.println(" Obrigado.");
+				       break;
+			       case 4:
+				       resultado = x / y;
+				       System.out.println(" O resultado é: "+resultado);
+				       System.out.println(" Obrigado.");
+				       break;
+			       default:
+				       break;
+		          	}
+			           break;
+			           
+		case 2:
+			System.out.println(" Bom, vejo que você escolheu a opção Calculadora para função do 2º grau.");
+			System.out.println(" Por favor, digite os valores de a, b e c com seus sinais de positivo e negativo.");
+			int a, b, c;
+			a = sc.nextInt();
+			b = sc.nextInt();
+			c = sc.nextInt();
+			double d = (Math.pow(-b,2) -4 * a * c);
+			double y1, y2;
+			y1 = (b + Math.sqrt(d)) / (2*a);
+			y2 = (b - Math.sqrt(d)) / (2*a);
+			
+			if(d>=0) {
+				System.out.printf(" Dada a função do segundo grau: %dx² %dx %d .%n", a, b, c);
+				System.out.printf(" Temos o valor de delta igual a: "+ d +". %n");
+				System.out.printf(" O(s) valor(es) da(s) raíz(es) é/são: %.2f e %.2f.", y1, y2);
+			}
+			else {
+				System.out.printf(" Dada a função do segundo grau: %dx² %dx %d .%n", a, b, c);
+				System.out.printf(" Temos o valor de delta negativo. Delta igual a: "+ d +". %n");
+				System.out.printf(" Portanto, não existem raízes.");
+			}
+			
+			break;
+			
+		case 3:
+			System.out.println(" Você escolheu a opção de potenciação. Ok, vamos calcular.");
+			System.out.println(" Digite a base e o expoente consecultivamente:");
+			double base, expo, poten;
+			base = sc.nextDouble();
+			expo = sc.nextDouble();
+			poten = Math.pow(base,expo);
+			System.out.printf(" O resultado é: %.1f.%n", poten);
+
+			break;			
+
+			
+		case 4:
+			System.out.println(" Muito bem. Você escolheu a opção de radiciação.");
+			System.out.println(" Digite qual número você deseja saber sua raíz quadrada.");
+			double raiz, resposta;
+			raiz = sc.nextDouble();
+			resposta = Math.sqrt(raiz);
+			System.out.printf(" A sua raiz quadrada é: %.1f. %n", resposta);
+			
+			break;
+
+		case 5:
+			System.out.println(" Muito bem. Conseguimos saber quais números são múltiplos.");
+			System.out.println(" Digite dois números para saber se são múltiplos um do outro ou não.");
+			int m,n;
+			m = sc.nextInt();
+			n = sc.nextInt();
+			if(m%n == 0 || n%m == 0) {
+				System.out.println(" Estes números são múltiplos.");
+			}
+			else {
+				System.out.println(" Estes números não são múltiplos.");
+			}
+			
+			break;
+	
+		case 6:
+			System.out.println(" Conseguimos saber se qualquer número é par ou ímpar.");
+			System.out.println(" Por favor, digite seu número.");
+			int q = sc.nextInt();
+			
+			if(q%2 == 0) {
+				System.out.println(" Este número é par.");
+			}
+			else {
+				System.out.println(" Este número é ímpar.");
+			}
+			
+			break;
+		default:
+			break;
+		}
+
+		sc.close();
+	}
+
+}
